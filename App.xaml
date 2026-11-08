@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:Laba10"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#CC6600"/>
+        </Style>
     </Application.Resources>
 </Application>

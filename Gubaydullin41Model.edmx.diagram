@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3ccd06fac09646d19cb86d9e4259eb98" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="Губайдуллин41Model.Category" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Губайдуллин41Model.Manufacturer" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Губайдуллин41Model.Order" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Губайдуллин41Model.OrderProduct" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Губайдуллин41Model.PickupPoint" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Губайдуллин41Model.Product" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Губайдуллин41Model.Role" Width="1.5" PointX="1.5" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Губайдуллин41Model.Supplier" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Губайдуллин41Model.User" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <AssociationConnector Association="Губайдуллин41Model.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="Губайдуллин41Model.FK_Product_Manufacturer" ManuallyRouted="false" />
+        <AssociationConnector Association="Губайдуллин41Model.FK__OrderProd__Order__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="Губайдуллин41Model.FK_Order_PickupPoint" ManuallyRouted="false" />
+        <AssociationConnector Association="Губайдуллин41Model.FK_Order_User" ManuallyRouted="false" />
+        <AssociationConnector Association="Губайдуллин41Model.FK_OrderProduct_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="Губайдуллин41Model.FK_Product_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="Губайдуллин41Model.FK__User__UserRole__398D8EEE" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

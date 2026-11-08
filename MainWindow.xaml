@@ -5,19 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Laba10"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-        FontFamily="Tw Cen MT"     Icon="/Image/logo.png">
+        Title="Губайдуллин41" Height="450" Width="800"
+        FontFamily="Tw Cen MT"  Icon="Image/icon.ico">
+    
+    
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="75"/>
+            <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Image Source="/Image/logo.png" HorizontalAlignment="Left" VerticalAlignment="Center" />
         <TextBlock Text="Вроде обувь" HorizontalAlignment="Center" Width="176" FontSize="30" Margin="15"/>
-        <Frame Grid.Row="1" Name="MainFrame"></Frame>
-        <Button Content="GO" HorizontalAlignment="Right" Width="150" FontSize="20" Margin="20" Background="#FFFF6600" Click="Button_Click"/>
-        
+        <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"></Frame>
+        <Button Content="Назад" Name="BtnBack" Width="175" Height="30" HorizontalAlignment="Right" Margin="5" Click="BtnBack_Click"></Button>
         
         
     </Grid>

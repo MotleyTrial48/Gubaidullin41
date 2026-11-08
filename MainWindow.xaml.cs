@@ -23,17 +23,32 @@ namespace Laba10
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new ServicePage());
+            MainFrame.Navigate(new ProductPage());
             Manager.MainFrame = MainFrame;
         }
 
-        class Manager
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            public static Frame MainFrame { get; set; } 
+            Manager.MainFrame.GoBack();
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void MainFrame_ContentRendered(object sender, EventArgs e)
         {
-            Manager.MainFrame.Navigate(new AddEditPage());
+            if (MainFrame.CanGoBack)
+            {
+                BtnBack.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BtnBack.Visibility = Visibility.Hidden;
+            }
         }
+
+       
+    }
+    public class Manager
+    {
+        public static Frame MainFrame { get; set; }
     }
 }
