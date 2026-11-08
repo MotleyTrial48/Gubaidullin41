@@ -75,6 +75,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Gubaydullin41Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Manager.cs" />
     <Compile Include="Manufacturer.cs">
       <DependentUpon>Gubaydullin41Model.tt</DependentUpon>
     </Compile>
@@ -181,15 +182,37 @@
       <DependentUpon>Gubaydullin41Model.edmx</DependentUpon>
       <LastGenOutput>Gubaydullin41Model.cs</LastGenOutput>
     </Content>
+    <Resource Include="Image\А112Т4.jpg" />
+    <Resource Include="Image\logo.png" />
+    <Resource Include="Image\J384T6.jpg" />
+    <Resource Include="Image\H782T5.jpg" />
+    <Resource Include="Image\G783F5.jpg" />
+    <Resource Include="Image\G432E4.jpg" />
+    <Resource Include="Image\F635R4.jpg" />
+    <Resource Include="Image\F572H7.jpg" />
+    <Resource Include="Image\D572U8.jpg" />
+    <Resource Include="Image\D329H3.jpg" />
+    <Resource Include="Image\B320R5.jpg" />
+    <Resource Include="PhotoProd\B320R5.jpg" />
+    <Resource Include="PhotoProd\D329H3.jpg" />
+    <Resource Include="PhotoProd\D572U8.jpg" />
+    <Resource Include="PhotoProd\F572H7.jpg" />
+    <Resource Include="PhotoProd\F635R4.jpg" />
+    <Resource Include="PhotoProd\G432E4.jpg" />
+    <Resource Include="PhotoProd\G783F5.jpg" />
+    <Resource Include="PhotoProd\H782T5.jpg" />
+    <Resource Include="PhotoProd\J384T6.jpg" />
+    <Resource Include="PhotoProd\А112Т4.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\icon.ico" />
-    <Resource Include="Image\logo.png" />
+    <Resource Include="PhotoProd\logo.png" />
     <Resource Include="Image\picture.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

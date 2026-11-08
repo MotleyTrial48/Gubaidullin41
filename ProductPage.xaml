@@ -26,9 +26,11 @@
                         </Grid.RowDefinitions>
                         <Image Width="200" Grid.Column="0" Grid.RowSpan="4" Stretch="UniformToFill" HorizontalAlignment="Center">
                             <Image.Source>
-                                <Binding Path="ProductPhoto">
+                                <Binding Path="PhotoProduct">
                                     <Binding.TargetNullValue>
-                                        <ImageSource>/Image/picture.png</ImageSource>
+                                        <ImageSource>
+                                            Image/picture.png
+                                        </ImageSource>
                                     </Binding.TargetNullValue>
                                 </Binding>
                             </Image.Source>

@@ -39,5 +39,17 @@ namespace Laba10
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderProduct> OrderProduct { get; set; }
         public virtual Supplier Supplier { get; set; }
+
+        //добавлено
+        public string PhotoProduct
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(ProductPhoto))
+                    return null;
+                return "/PhotoProd/" + ProductPhoto;
+            }
+        }
+        //добавлено
     }
 }

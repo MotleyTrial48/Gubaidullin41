@@ -47,8 +47,4 @@ namespace Laba10
 
        
     }
-    public class Manager
-    {
-        public static Frame MainFrame { get; set; }
-    }
 }
