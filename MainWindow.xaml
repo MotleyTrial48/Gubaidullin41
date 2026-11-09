@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:Laba10"
         mc:Ignorable="d"
         Title="Губайдуллин41" Height="450" Width="800"
-        FontFamily="Tw Cen MT"  Icon="Image/icon.ico">
-    
-    
+        FontFamily="Comic Sans MS"  Icon="Image/icon.ico">
+
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -16,10 +16,10 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Image Source="/Image/logo.png" HorizontalAlignment="Left" VerticalAlignment="Center" />
-        <TextBlock Text="Вроде обувь" HorizontalAlignment="Center" Width="176" FontSize="30" Margin="15"/>
+        <TextBlock Text="ООО 41 Размер" HorizontalAlignment="Center" Width="219" FontSize="30" Margin="0,15,0,15"/>
         <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"></Frame>
         <Button Content="Назад" Name="BtnBack" Width="175" Height="30" HorizontalAlignment="Right" Margin="5" Click="BtnBack_Click"></Button>
-        
-        
+
+
     </Grid>
 </Window>

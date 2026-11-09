@@ -23,10 +23,65 @@ namespace Laba10
         public ProductPage()
         {
             InitializeComponent();
-            
+
             var currentProducts = Губайдуллин41Entities.GetContext().Product.ToList();
 
             ProductListView.ItemsSource = currentProducts;
+
+            ComboType.SelectedIndex = 0;
+
+            UpdateProduct();
+        }
+
+
+
+        private void UpdateProduct()
+        {
+            var currentProducts = Губайдуллин41Entities.GetContext().Product.ToList();
+
+
+            if (ComboType.SelectedIndex == 0)
+            {
+                currentProducts = currentProducts.Where(p => (p.ProductDiscountAmount >= 0 && p.ProductDiscountAmount <= 100)).ToList();
+            }
+            if (ComboType.SelectedIndex == 1)
+            {
+                currentProducts = currentProducts.Where(p => (p.ProductDiscountAmount >= 0 && p.ProductDiscountAmount < 10)).ToList();
+            }
+            if (ComboType.SelectedIndex == 2)
+            {
+                currentProducts = currentProducts.Where(p => (p.ProductDiscountAmount >= 10 && p.ProductDiscountAmount <= 15)).ToList();
+            }
+            if (ComboType.SelectedIndex == 3)
+            {
+                currentProducts = currentProducts.Where(p => (p.ProductDiscountAmount >= 15 && p.ProductDiscountAmount <= 100)).ToList();
+            }
+
+            currentProducts = currentProducts.Where(p => p.ProductName.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
+
+
+
+        }
+
+
+        private void ComboType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateProduct();
+        }
+
+        private void RButtonUp_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateProduct();
+        }
+
+        private void RbuttonDown_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateProduct();
+        }
+
+        private void TBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateProduct();
         }
     }
 }

@@ -40,7 +40,7 @@ namespace Laba10
         public virtual ICollection<OrderProduct> OrderProduct { get; set; }
         public virtual Supplier Supplier { get; set; }
 
-        //добавлено
+        //ЭТО
         public string PhotoProduct
         {
             get
@@ -50,6 +50,6 @@ namespace Laba10
                 return "/PhotoProd/" + ProductPhoto;
             }
         }
-        //добавлено
+        //ЭТО
     }
 }
