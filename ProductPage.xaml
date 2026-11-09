@@ -11,37 +11,41 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto" MinHeight="95.74"></RowDefinition>
-            <RowDefinition Height="auto" MinHeight="83.74"></RowDefinition>
-            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,83" Grid.RowSpan="2" Width="620">
-            <StackPanel Margin="10" Orientation="Horizontal">
-                <TextBlock Text="Поиск по наименованию" TextAlignment="Right" Width="300" FontSize="20" ></TextBlock>
-                <TextBox Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged" Width="300" FontSize="15"></TextBox>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+            <!-- счётчик: сколько выведено из скольки -->
+            <TextBlock Name="TBCount" Text="кол-во 0 из 0" FontSize="16" VerticalAlignment="Bottom" Margin="0,0,10,0"/>
+
+            <!-- поиск -->
+            <StackPanel Margin="5,0">
+                <TextBlock Text="поиск по наименованию" FontSize="16"/>
+                <TextBox Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged" Width="200" FontSize="15"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <TextBlock Text="Фильтрация по скидке" TextAlignment="Right" Width="300" FontSize="20" ></TextBlock>
+            <!-- сортировка -->
+            <StackPanel Margin="10,0" VerticalAlignment="Bottom">
+                <RadioButton Content="по возрастанию стоимости" GroupName="Sort" FontSize="16"
+                         Name="RButtonUp" Checked="RButtonUp_Checked"/>
+                <RadioButton Content="по убыванию стоимости" GroupName="Sort" FontSize="16"
+                         Name="RbuttonDown" Checked="RbuttonDown_Checked"/>
+            </StackPanel>
+
+            
+            <StackPanel Margin="10,0">
+                <TextBlock Text="фильтрация по скидке" FontSize="16"/>
                 <ComboBox Name="ComboType" SelectionChanged="ComboType_SelectionChanged" FontSize="15" Width="200">
-                    <TextBlock>Все</TextBlock>
+                    <TextBlock>Все диапазоны</TextBlock>
                     <TextBlock>0-9,99%</TextBlock>
                     <TextBlock>10-14,99%</TextBlock>
-                    <TextBlock>15 и более</TextBlock>
+                    <TextBlock>15% и более</TextBlock>
                 </ComboBox>
             </StackPanel>
-        </WrapPanel>
-        <StackPanel Grid.Row="1" Orientation="Vertical"  Margin="15,15,15,15">
-            <RadioButton Content="По возрастанию стоимости" GroupName="Sort"
-                         Width="300" FontSize="20" Name="RButtonUp" Checked="RButtonUp_Checked"/>
-            <RadioButton Content="По убыванию стоимости" Width="300" FontSize="20" GroupName="Sort"
-                         Name="RbuttonDown" Checked="RbuttonDown_Checked"/>
         </StackPanel>
-
-        <ListView Name="ServiceListView" Grid.Row="1" Margin="0,83,0,0" Grid.RowSpan="2">
-
-        </ListView>
-        <ListView Name="ProductListView" Grid.Row="1" Margin="0,83,0,0" Grid.RowSpan="2">
+     
+        <ListView Name="ProductListView" Grid.Row="1">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>

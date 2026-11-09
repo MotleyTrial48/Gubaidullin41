@@ -59,7 +59,25 @@ namespace Laba10
 
             currentProducts = currentProducts.Where(p => p.ProductName.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
 
+            //реализуем поиск данных в листвью при вводе текста в окно поиска
+            currentProducts = currentProducts.Where(p => p.ProductName.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
 
+            //реализуем сортировку по убыванию
+            if (RbuttonDown.IsChecked.Value)
+            {
+                currentProducts = currentProducts.OrderByDescending(p => p.ProductCost).ToList();
+            }
+            //реализуем сортировку по возрастанию
+            if (RButtonUp.IsChecked.Value)
+            {
+                currentProducts = currentProducts.OrderBy(p => p.ProductCost).ToList();
+            }
+
+            //отображаем итоги поиска/фильтрации/сортировки
+            ProductListView.ItemsSource = currentProducts;
+
+            //количество выведенных из общего количества
+            TBCount.Text = "кол-во " + currentProducts.Count + " из " + Губайдуллин41Entities.GetContext().Product.Count();
 
         }
 
