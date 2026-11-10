@@ -38,7 +38,7 @@ namespace Laba10
 
         private void GuesBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+            Manager.MainFrame.Navigate(new ProductPage(null));
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
