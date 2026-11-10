@@ -23,9 +23,10 @@ namespace Laba10
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new ProductPage());
+            MainFrame.Navigate(new AuthPage());
             Manager.MainFrame = MainFrame;
         }
+
 
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)

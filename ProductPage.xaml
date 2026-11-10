@@ -12,20 +12,34 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
-            <!-- счётчик: сколько выведено из скольки -->
+
+        <StackPanel Grid.Row="0" Margin="5">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Вы авторизованы как " FontSize="20"/>
+                <TextBlock Name="FIOTB" FontSize="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Роль: " FontSize="20"/>
+                <TextBlock Name="RoleTB" FontSize="20"/>
+            </StackPanel>
+        </StackPanel>
+        
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5">
+            
             <TextBlock Name="TBCount" Text="кол-во 0 из 0" FontSize="16" VerticalAlignment="Bottom" Margin="0,0,10,0"/>
 
-            <!-- поиск -->
+            
             <StackPanel Margin="5,0">
                 <TextBlock Text="поиск по наименованию" FontSize="16"/>
                 <TextBox Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged" Width="200" FontSize="15"/>
             </StackPanel>
 
-            <!-- сортировка -->
+            
             <StackPanel Margin="10,0" VerticalAlignment="Bottom">
                 <RadioButton Content="по возрастанию стоимости" GroupName="Sort" FontSize="16"
                          Name="RButtonUp" Checked="RButtonUp_Checked"/>
@@ -45,7 +59,7 @@
             </StackPanel>
         </StackPanel>
      
-        <ListView Name="ProductListView" Grid.Row="1">
+        <ListView Name="ProductListView" Grid.Row="2">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
