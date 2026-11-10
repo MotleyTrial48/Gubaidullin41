@@ -50,7 +50,7 @@ namespace Laba10
             }
             if (ComboType.SelectedIndex == 2)
             {
-                currentProducts = currentProducts.Where(p => (p.ProductDiscountAmount >= 10 && p.ProductDiscountAmount <= 15)).ToList();
+                currentProducts = currentProducts.Where(p => (p.ProductDiscountAmount >= 10 && p.ProductDiscountAmount < 15)).ToList();
             }
             if (ComboType.SelectedIndex == 3)
             {
