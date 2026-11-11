@@ -15,7 +15,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+        <Button Name="OrderBtn" Content="Просмотр заказа" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Width="220" Visibility="Collapsed" Click="OrderBtn_Click"/>
 
         <StackPanel Grid.Row="0" Margin="5">
             <StackPanel Orientation="Horizontal">

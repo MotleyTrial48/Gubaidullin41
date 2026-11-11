@@ -39,6 +39,10 @@ namespace Laba10
         private void GuesBtn_Click(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.Navigate(new ProductPage(null));
+            LoginTB.Text = "";
+            PassTB.Text = "";
+            CaptchaTB.Text = "";
+            CaptchaPanel.Visibility = Visibility.Collapsed;
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
@@ -72,7 +76,7 @@ namespace Laba10
                 MessageBox.Show("Введены неверные данные");
                 if (CaptchaPanel.Visibility == Visibility.Visible)
                 {
-                    Block(); // ошибка при уже показанной капче, блок на 10 секунд
+                    Block(); // ошибка, блок на 10 секунд
                 }
                 GenerateCaptcha();
             }
@@ -82,7 +86,7 @@ namespace Laba10
 
         private void GenerateCaptcha()
         {
-            string chars  = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            string chars  = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
             captchaText = "";
             for (int i = 0; i <4; i++)
@@ -101,5 +105,6 @@ namespace Laba10
             LoginBtn.IsEnabled = false; 
             timer.Start();
         }
+        
     }
 }

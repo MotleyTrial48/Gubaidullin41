@@ -18,11 +18,22 @@ namespace Laba10
     /// <summary>
     /// Логика взаимодействия для ProductPage.xaml
     /// </summary>
+    
+
     public partial class ProductPage : Page
     {
+
+        List<OrderProduct> selectedOrderProducts = new List<OrderProduct>(); // позиции заказа
+        List<Product> selectedProducts = new List<Product>(); // выбранные товары
+        private int newOrderID; // номер нового заказа
+        private User currentUser; // кто сейчас вошёл (null для гостя)
+
+
         public ProductPage(User user)
         {
             InitializeComponent();
+
+            currentUser = user;
 
             if (user == null)
             {
@@ -55,6 +66,7 @@ namespace Laba10
 
             UpdateProduct();
         }
+
 
 
 
@@ -125,6 +137,21 @@ namespace Laba10
             UpdateProduct();
         }
 
+        private void OrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            selectedProducts = selectedProducts.Distinct().ToList(); // убираем повторы товаров
+            OrderWindow orderWindow = new OrderWindow(selectedOrderProducts, selectedProducts, FIOTB.Text, currentUser);
+            orderWindow.ShowDialog(); // модальное окно заказа
+
+            //после закрытия окна: если заказ пуст (сохранён или всё удалено)
+            if (selectedOrderProducts.Count == 0)
+            {
+                OrderBtn.Visibility = Visibility.Collapsed; // прячем кнопку
+                selectedProducts.Clear();
+                var allOrders = Губайдуллин41Entities.GetContext().Order.ToList();
+                newOrderID = allOrders.Count == 0 ? 1 : allOrders.Max(p => p.OrderID) + 1; // номер следующего заказа
+            }
+        }
 
     }
 }
