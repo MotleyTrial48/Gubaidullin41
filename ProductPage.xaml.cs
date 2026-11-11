@@ -152,6 +152,38 @@ namespace Laba10
                 newOrderID = allOrders.Count == 0 ? 1 : allOrders.Max(p => p.OrderID) + 1; // номер следующего заказа
             }
         }
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (ProductListView.SelectedIndex >= 0)
+            {
+                var prod = ProductListView.SelectedItem as Product; // выбранный товар
+                selectedProducts.Add(prod);
+
+                var newOrderProd = new OrderProduct(); // новая позиция заказа
+                newOrderProd.OrderID = newOrderID;
+                //номер продукта в новую запись
+                newOrderProd.ProductArticleNumber = prod.ProductArticleNumber;
+                newOrderProd.Quantity = 1;
+
+                //проверим есть ли уже такой товар в заказе
+                var selOP = selectedOrderProducts.Where(p => Equals(p.ProductArticleNumber, prod.ProductArticleNumber));
+                if (selOP.Count() == 0)
+                {
+                    selectedOrderProducts.Add(newOrderProd); // нет, добавляем
+                }
+                else
+                {
+                    foreach (OrderProduct p in selectedOrderProducts)
+                    {
+                        if (p.ProductArticleNumber == prod.ProductArticleNumber)
+                            p.Quantity++; // есть, увеличиваем количество
+                    }
+                }
+
+                OrderBtn.Visibility = Visibility.Visible; // показываем кнопку просмотра заказа
+                ProductListView.SelectedIndex = -1; // снимаем выделение
+            }
+        }
 
     }
 }
